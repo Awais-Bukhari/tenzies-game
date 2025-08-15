@@ -1,20 +1,124 @@
-.timer {
-  background-color: white;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-family: 'Karla', sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  color: #5035FF;
+body {
+  background-color: #0b2434;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 6px;
-  margin-bottom: 8px;
-  transition: transform 0.15s ease-in-out;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 10px;
 }
 
-.timer:hover {
-  transform: scale(1.05);
+main {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  margin-top: 15px;
+  height: auto; /* Prevent tall empty space */
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.timer {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.instructions {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dice-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.die-face {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  position: relative;
+  cursor: pointer;
+}
+
+.die-face.held {
+  background-color: #a2f5a2;
+}
+
+.pip {
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.roll-dice {
+  background-color: #5035ff;
+  color: white;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.roll-dice:hover {
+  background-color: #3622c4;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+    padding: 1rem;
+  }
+  .die-face {
+    width: 70px;
+    height: 70px;
+  }
+  .pip {
+    width: 14px;
+    height: 14px;
+  }
+  .roll-dice {
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  body {
+    padding: 5px; /* Less padding on mobile */
+  }
+  main {
+    width: 90%; /* Fill most of the screen width */
+    margin-top: 10px;
+  }
+  .die-face {
+    width: 60px;
+    height: 60px;
+  }
+  .pip {
+    width: 14px;
+    height: 14px;
+  }
+  .roll-dice {
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+  }
 }

@@ -90,19 +90,19 @@ export default function App() {
   ));
 
   return (
-    <main>
-      {tenzies && <Confetti />}
-      <h1 className="title">Tenzies</h1>
-      <p className="timer">⏱ {timer}s</p>
-      <p className="instructions">
-        {tenzies
-          ? "🎉 Congratulations! You have won the game. Please click on New Game to start."
-          : "Roll until all dice are the same. Click each die to freeze it at its current value between rolls."}
-      </p>
-      <div className="dice-container">{diceElements}</div>
-      <button className="roll-dice" onClick={rollDice}>
-        {tenzies ? "New Game" : "Roll"}
-      </button>
-    </main>
-  );
+  <main>
+    {tenzies && <Confetti />}
+    <h1 className="title">Tenzies</h1>
+    <p className="timer">⏱ {timer}s</p>
+    <p className="instructions">
+      {tenzies
+        ? "🎉 Congratulations! You have won the game. Please click on New Game to start."
+        : "Roll until all dice are the same. Click each die to freeze it at its current value between rolls."}
+    </p>
+    <div className="dice-container">{diceElements}</div>
+    <button className="roll-dice" onClick={rollDice}>
+      {tenzies ? "New Game" : "Roll"}
+    </button>
+  </main>
+);
 }
