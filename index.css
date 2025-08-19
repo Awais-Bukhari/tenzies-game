@@ -1,22 +1,33 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #0b2434;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-main {
+.main {
   background-color: #f5f5f5;
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
-  width: 95%; /* closer to full width */
-  max-width: none; /* allow it to grow based on screen */
+  width: calc(100% - 10px); /* leaves 5px margin on each side */
+  max-width: 600px;         /* nice card size on large screens */
+  margin: auto;             /* ensures it stays centered */
   box-sizing: border-box;
 }
+
+
+
+
 
 .title {
   margin-bottom: 0.5rem;
@@ -95,6 +106,13 @@ main {
 
 /* Small mobile screens */
 @media (max-width: 480px) {
+  @media (max-width: 480px) {
+  .main {
+    width: 95%;       /* not 100%, leaves little margin */
+    max-width: 95%;   /* keep it flexible */
+    margin: auto;
+  }
+}
   .die-face {
     width: 50px;
     height: 50px;
